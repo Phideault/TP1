@@ -9,7 +9,8 @@ public class Epicerie {
     public static void main(String[] args) {
 
         //Déclaration des variables.
-        float taxTPS = 0.05f, taxTVQ = 0.1f, grandTotal = 0, prixProduit = 0, total = 0;
+        final float taxTPS = 0.05f, taxTVQ = 0.1f;
+        float grandTotal = 0, prixProduit = 0, total = 0;
         String nomProduit = "", typeProduit = "", listeProduit = "";
 
         Scanner userInput;
