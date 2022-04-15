@@ -1,0 +1,47 @@
+Algorithme Epicerie
+
+Catégories: Fruit, Légume, Épicerie taxable, Épicerie non-taxable
+Variables: 
+	taxeTps <— 0.05 (Réel)
+	taxeTvq <— 0.1 (Réel)
+	grandTotal <— 0 (Réel)
+	prixProduit, total <— Réel
+	nomProduit, typeProduit, listeProduit <— Chaine de caractères
+	epicerieEnCours <— Booléen
+
+Début
+	epicerieEnCours = Vrai
+
+	Répéter
+		Écrire(“Choisir type de produit”)
+		Lire(Catégorie de produit)
+		Écrire(“Inscrire le nom du produit”)
+		Lire(Nom du produit)
+		Écrire(“Quel est le prix du produit”)
+		Lire(Prix du produit)
+
+		Écrire(“Le type de produit est: “ + typeProduit)
+		Écrire(“Le nom du produit est: “ + nomProduit)
+		Écrire(“Le prix du produit est: “ + prixProduit)
+		total <— prixProduit
+
+		Si (Catégorie du produit = Épicerie Taxable) Faire
+			Écrire(“TPS = “ + prixProduit * taxeTps)
+			Écrire(“TVQ = “ + prixProduit * taxeTvq)
+			total <— prixProduit * taxeTps
+			total <— prixProduit * taxeTvq
+		Fin
+		
+		listeProduit <— listeProduit + nomProduit
+		grandTotal <— grandTotal + Total
+		
+		Écrire(“Désirez vous ajouter un autre produit?”)
+		Lire(Réponse) // Oui ou Non
+		Si (Réponse = Non) Faire
+			epicerieEnCours = Faux
+		Fin
+	Tant que (epicerieEnCours = Vrai)
+
+	Écrire(Les produits achetés sont: “ + listeProduit)
+	Écrire(Le Grand Total est de:  + grandTotal)
+FIN
